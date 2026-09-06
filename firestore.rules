@@ -1,0 +1,60 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Default-deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidUserProfile(data) {
+      return data.keys().hasAll(['id', 'email', 'createdAt']) &&
+             data.id is string && data.id == request.auth.uid &&
+             data.email is string && data.email.size() <= 256 &&
+             (!('displayName' in data) || (data.displayName is string && data.displayName.size() <= 128)) &&
+             (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 1024));
+    }
+
+    function isValidPdfTask(data, userId) {
+      return data.keys().hasAll(['id', 'userId', 'tool', 'fileName', 'createdAt']) &&
+             data.id is string && data.id.size() <= 128 &&
+             data.userId == userId &&
+             data.tool in ['merge', 'split', 'compress', 'pdf-to-word'] &&
+             data.fileName is string && data.fileName.size() <= 256 &&
+             (!('fileCount' in data) || data.fileCount is number) &&
+             (!('fileSize' in data) || data.fileSize is number);
+    }
+
+    // User profile documents: Only owner can read and write their own profile
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if false;
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUserProfile(request.resource.data);
+      allow update: if isOwner(userId) && isValidId(userId) && isValidUserProfile(request.resource.data) &&
+                      request.resource.data.id == resource.data.id &&
+                      request.resource.data.email == resource.data.email;
+      allow delete: if isOwner(userId) && isValidId(userId);
+
+      // Tasks subcollection: PDF processing history
+      match /tasks/{taskId} {
+        allow get, list: if isOwner(userId) && isValidId(userId);
+        allow create: if isOwner(userId) && isValidId(userId) && isValidId(taskId) &&
+                        isValidPdfTask(request.resource.data, userId);
+        allow update: if false; // Tasks are immutable logs
+        allow delete: if isOwner(userId) && isValidId(userId) && isValidId(taskId);
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iLovePDF | Online PDF tools for PDF lovers</title>
+  <link rel="icon" type="image/svg+xml" href="/app-icon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Sticky Header / Navbar -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="#" class="logo-link" id="logo-link" aria-label="PDF Editor Home" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+          <img src="/app-icon.svg" alt="PDF Editor" style="height: 40px; width: 40px; border-radius: 10px; display: block; box-shadow: 0 2px 6px rgba(0,0,0,0.15);" />
+          <span style="font-size: 22px; font-weight: 900; color: #191b1f; letter-spacing: -0.5px;">PDF<span style="color: #e5322d; margin-left: 2px;">Editor</span></span>
+        </a>
+
+        <!-- Main Navigation Links -->
+        <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li class="nav-item active"><a href="#merge">MERGE PDF</a></li>
+            <li class="nav-item"><a href="#split">SPLIT PDF</a></li>
+            <li class="nav-item"><a href="#compress">COMPRESS PDF</a></li>
+            <li class="nav-item">
+              <a href="#convert">CONVERT PDF <span class="dropdown-arrow">▼</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="#all-tools">ALL PDF TOOLS <span class="dropdown-arrow">▼</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right Action Links -->
+      <div class="header-actions">
+        <a href="#login" class="btn-ghost" id="btn-login">Log in</a>
+        <a href="#signup" class="btn-primary" id="btn-signup">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero-section">
+      <h1 class="hero-title" id="hero-title">
+        Every tool you need to work with PDFs in one place
+      </h1>
+      <p class="hero-subtitle" id="hero-subtitle">
+        Every tool you need to use PDFs, at your fingertips. All are 100% FREE and easy to use! Merge, split, compress, convert, rotate, unlock and watermark PDFs with just a few clicks.
+      </p>
+    </section>
+
+    <!-- Responsive Tool Cards Grid -->
+    <section class="tools-section" id="tools-section">
+      <div class="tools-grid" id="tools-grid">
+        
+        <!-- Card 1: Merge PDF -->
+        <article class="tool-card" id="card-merge" tabindex="0" role="button" aria-label="Merge PDF tool">
+          <div class="card-icon-container icon-merge">
+            <!-- Merge Icon -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="12" y1="18" x2="12" y2="12"></line>
+              <line x1="9" y1="15" x2="15" y2="15"></line>
+            </svg>
+          </div>
+          <h2 class="card-title">Merge PDF</h2>
+          <p class="card-description">
+            Combine PDFs in the order you want with the easiest PDF merger available.
+          </p>
+        </article>
+
+        <!-- Card 2: Split PDF -->
+        <article class="tool-card" id="card-split" tabindex="0" role="button" aria-label="Split PDF tool">
+          <div class="card-icon-container icon-split">
+            <!-- Split Scissors Icon -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="6" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+              <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+              <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <h2 class="card-title">Split PDF</h2>
+          <p class="card-description">
+            Separate one page or a whole set for easy conversion into independent PDF files.
+          </p>
+        </article>
+
+        <!-- Card 3: Compress PDF -->
+        <article class="tool-card" id="card-compress" tabindex="0" role="button" aria-label="Compress PDF tool">
+          <div class="card-icon-container icon-compress">
+            <!-- Compress / Minimize Icon -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 14 10 14 10 20"></polyline>
+              <polyline points="20 10 14 10 14 4"></polyline>
+              <line x1="14" y1="10" x2="21" y2="3"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+          </div>
+          <h2 class="card-title">Compress PDF</h2>
+          <p class="card-description">
+            Reduce file size while optimizing for maximal PDF quality.
+          </p>
+        </article>
+
+        <!-- Card 4: PDF to Word -->
+        <article class="tool-card" id="card-pdf-to-word" tabindex="0" role="button" aria-label="PDF to Word tool">
+          <div class="card-icon-container icon-convert">
+            <!-- File Document Conversion Icon -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h2 class="card-title">PDF to Word</h2>
+          <p class="card-description">
+            Easily convert your PDF files into easy to edit DOC and DOCX documents.
+          </p>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-container">
+      <div>© iLovePDF Clone 2026 ® - Your PDF Editor</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#privacy">Privacy Policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

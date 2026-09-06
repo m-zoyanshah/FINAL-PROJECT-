@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 54" width="220" height="54" fill="none">
+  <defs>
+    <!-- Background Red Linear Gradient -->
+    <linearGradient id="redBadgeGradH" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#ff3b2f" />
+      <stop offset="25%" stop-color="#ea2318" />
+      <stop offset="75%" stop-color="#c81315" />
+      <stop offset="100%" stop-color="#a60c0e" />
+    </linearGradient>
+
+    <!-- Top Highlight -->
+    <radialGradient id="topGlowH" cx="50%" cy="15%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Outer Drop Shadow -->
+    <filter id="badgeShadowH" x="-15%" y="-10%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Left: Red App Icon Squircle -->
+  <g transform="translate(4, 3)" filter="url(#badgeShadowH)">
+    <rect x="0" y="0" width="48" height="48" rx="12" fill="url(#redBadgeGradH)" />
+    <rect x="0" y="0" width="48" height="48" rx="12" fill="url(#topGlowH)" />
+    <rect x="0" y="0" width="48" height="48" rx="12" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.35" fill="none" />
+
+    <!-- Scaled Documents & Pencil inside the icon -->
+    <g transform="translate(1.5, 0.5) scale(0.24)">
+      <!-- Back Document -->
+      <path
+        d="M 72 45 H 122 L 140 63 V 142 C 140 146.4 136.4 150 132 150 H 72 C 67.6 150 64 146.4 64 142 V 53 C 64 48.6 67.6 45 72 45 Z"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="8"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+      />
+      <path
+        d="M 122 45 V 63 H 140"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="8"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+      />
+
+      <!-- Front Document -->
+      <path
+        d="M 58 57 H 108 L 126 75 V 154 C 126 158.4 122.4 162 118 162 H 58 C 53.6 162 50 158.4 50 154 V 65 C 50 60.6 53.6 57 58 57 Z"
+        fill="#c21316"
+        stroke="#ffffff"
+        stroke-width="9"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+      />
+      <path
+        d="M 108 57 V 75 H 126"
+        fill="#c21316"
+        stroke="#ffffff"
+        stroke-width="9"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+      />
+
+      <!-- "PDF" Text -->
+      <text
+        x="62"
+        y="91"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+        font-size="22"
+        font-weight="900"
+        fill="#ffffff"
+        letter-spacing="1"
+      >PDF</text>
+
+      <!-- Diagonal Pencil -->
+      <g stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M 112 101 L 118 107 C 119.5 108.5 119.5 111 118 112.5 L 115 115.5 C 113.5 117 111 117 109.5 115.5 L 103.5 109.5 Z"
+          fill="#ffffff"
+          stroke-width="2.5"
+        />
+        <path
+          d="M 103.5 109.5 L 75.5 137.5 L 67.5 129.5 L 95.5 101.5 Z"
+          fill="#ffffff"
+          stroke-width="2.5"
+        />
+        <line x1="97.5" y1="103.5" x2="69.5" y2="131.5" stroke="#c21316" stroke-width="3" />
+        <line x1="101.5" y1="107.5" x2="73.5" y2="135.5" stroke="#c21316" stroke-width="3" />
+        <polygon
+          points="75.5,137.5 67.5,129.5 61,144"
+          fill="#ffffff"
+          stroke="#ffffff"
+          stroke-width="2"
+        />
+        <polygon
+          points="64.5,136.5 67.5,139.5 61,144"
+          fill="#c21316"
+          stroke="#c21316"
+          stroke-width="1"
+        />
+      </g>
+    </g>
+  </g>
+
+  <!-- Right: Clean Brand Name Typography "PDF Tools" / "PDF Editor" -->
+  <text x="62" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="900" fill="#191b1f" letter-spacing="-0.5">
+    PDF
+  </text>
+  <text x="110" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="900" fill="#e5322d" letter-spacing="-0.5">
+    Editor
+  </text>
+</svg>

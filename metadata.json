@@ -1,0 +1,6 @@
+{
+  "name": "iLovePDF Clone",
+  "description": "A clone of iLovePDF featuring PDF merge, split, compress, and conversion tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
